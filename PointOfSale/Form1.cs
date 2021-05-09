@@ -143,9 +143,16 @@ namespace PointOfSale
                     label7.Text = "";
                     label8.Text = "0";
                 }
-                
+
+                List<TransactionDetail> details = new List<TransactionDetail>();
+
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    details.Add(new TransactionDetail((string)dataGridView1.Rows[i].Cells[0].Value, Int32.Parse((string)dataGridView1.Rows[i].Cells[1].Value)));
+                }
+
                 Transaction trans = new Transaction(get_Total_Cost(), comboBox1.Text.Trim());
-                DbTransaction.AddTransaction(trans);
+                DbTransaction.AddTransaction(trans, details);
             }
         }
 

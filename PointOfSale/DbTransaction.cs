@@ -24,7 +24,7 @@ namespace PointOfSale
             return con;
         }
 
-        public static void AddTransaction(Transaction trans)
+        public static void AddTransaction(Transaction trans, List<TransactionDetail> details)
         {
             string sql = "INSERT INTO transaction VALUES (NULL, @TransactionTotal, @TransactionMethod)";
             MySqlConnection con = GetConnection();
@@ -37,6 +37,21 @@ namespace PointOfSale
             try
             {
                 cmd.ExecuteNonQuery();
+                long parentID = cmd.LastInsertedId;
+
+                foreach(var detail in details)
+                {
+                    string sql2 = "INSERT INTO transaction_detail VALUES (@DetailID, @DetailName, @DetailQty)";
+                    MySqlCommand cmd2 = new MySqlCommand(sql2, con);
+                    cmd2.CommandType = CommandType.Text;
+
+                    cmd2.Parameters.Add("@DetailID", MySqlDbType.Int32).Value = parentID;
+                    cmd2.Parameters.Add("@DetailName", MySqlDbType.VarChar).Value = detail.NamaBarang;
+                    cmd2.Parameters.Add("@DetailQty", MySqlDbType.Int32).Value = detail.JumlahBarang;
+
+                    cmd2.ExecuteNonQuery();
+                }
+
                 MessageBox.Show("Terima kasih sudah berbelanja!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(MySqlException error)
