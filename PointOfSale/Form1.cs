@@ -129,18 +129,23 @@ namespace PointOfSale
 
         private void button25_Click(object sender, EventArgs e)
         {
-            if(comboBox1.Text == "Tunai")
-            {
-                get_Change();
-            }
-            else if(comboBox1.Text == "")
+            if(comboBox1.Text == "")
             {
                 MessageBox.Show("Pilih metode pembayaran!");
             }
             else
             {
-                label7.Text = "";
-                label8.Text = "0";
+                if (comboBox1.Text == "Tunai")
+                {
+                    get_Change();
+                } else
+                {
+                    label7.Text = "";
+                    label8.Text = "0";
+                }
+                
+                Transaction trans = new Transaction(get_Total_Cost(), comboBox1.Text.Trim());
+                DbTransaction.AddTransaction(trans);
             }
         }
 
