@@ -113,7 +113,6 @@ namespace PointOfSale
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(320, 468);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button7
             // 
@@ -260,7 +259,6 @@ namespace PointOfSale
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(477, 468);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // textBox8
             // 
@@ -316,7 +314,6 @@ namespace PointOfSale
             this.textBox4.TabIndex = 25;
             this.textBox4.Text = "Spaghetti 20.000";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox3
             // 
@@ -350,7 +347,6 @@ namespace PointOfSale
             this.textBox1.TabIndex = 22;
             this.textBox1.Text = "Dorayaki 5.000";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // Pizza
             // 
@@ -362,7 +358,6 @@ namespace PointOfSale
             this.Pizza.TabIndex = 21;
             this.Pizza.Text = "Pizza 15.000";
             this.Pizza.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Pizza.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button16
             // 
@@ -538,7 +533,6 @@ namespace PointOfSale
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(295, 45);
             this.comboBox1.TabIndex = 6;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -581,7 +575,6 @@ namespace PointOfSale
             this.label11.Size = new System.Drawing.Size(152, 45);
             this.label11.TabIndex = 1;
             this.label11.Text = "Nominal";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -592,7 +585,6 @@ namespace PointOfSale
             this.label12.Size = new System.Drawing.Size(212, 45);
             this.label12.TabIndex = 0;
             this.label12.Text = "Pembayaran";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // panel4
             // 
@@ -640,7 +632,6 @@ namespace PointOfSale
             this.label4.Size = new System.Drawing.Size(295, 46);
             this.label4.TabIndex = 3;
             this.label4.Text = "0";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -661,7 +652,6 @@ namespace PointOfSale
             this.label2.Size = new System.Drawing.Size(186, 45);
             this.label2.TabIndex = 1;
             this.label2.Text = "PPN (10%)";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -672,7 +662,6 @@ namespace PointOfSale
             this.label1.Size = new System.Drawing.Size(114, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Harga";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
@@ -687,7 +676,6 @@ namespace PointOfSale
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(419, 468);
             this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
