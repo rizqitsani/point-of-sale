@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,13 +32,14 @@ namespace PointOfSale
 
         private double get_Total_Cost()
         {
-            Double tax = 0.1, taxTotal;
+            Double tax = 0.1, taxTotal, total;
             taxTotal = cost_Of_Items() * tax;
-            if(dataGridView1.Rows.Count > 0)
+            total = cost_Of_Items() + taxTotal;
+            if (dataGridView1.Rows.Count > 0)
             {
-                label5.Text = String.Format("{0:c2}", taxTotal);
-                label4.Text = String.Format("{0:c2}", cost_Of_Items());
-                label6.Text = String.Format("{0:c2}", cost_Of_Items() + taxTotal);
+                label5.Text = taxTotal.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
+                label4.Text = cost_Of_Items().ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
+                label6.Text = total.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"));
             }
 
             return cost_Of_Items() + taxTotal;
